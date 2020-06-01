@@ -3,7 +3,7 @@
     ./app/vues/posts/index.php
 */
 ?>
-<div class="container">
+
   <div class="row d-flex">
     <?php foreach ($posts as $post): ?>
         <div class="col-md-6 d-flex ftco-animate">
@@ -37,7 +37,7 @@
       </div>
     </div>
   </div>
-</div>
+
 
 
 

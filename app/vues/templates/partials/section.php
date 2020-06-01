@@ -7,7 +7,9 @@
    <div class="container">
      <div class="row">
        <div class="col-lg-8 ftco-animate">
-         <?php echo $content; ?>
+         <div class="container">
+           <?php echo $content; ?>
+         </div>
        </div>
 
        <!-- .col-md-8 -->
