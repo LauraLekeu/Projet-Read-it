@@ -6,6 +6,7 @@
 namespace Controleurs\Posts;
 use Modeles\Posts;
 
+
 //
 function indexAction(\PDO $connexion) {
   // Je demande la liste des 10 derniers posts.

@@ -25,6 +25,10 @@ if (isset($_GET['postID'])):
   \Controleurs\Posts\showAction($connexion, $_GET['postID']);
 
 
+
+
+
+
 // ROUTE PAR DEFAUT (Liste des 10 derniers posts)
 // PATTERN: /
 // CTRL: postsControleur
@@ -32,6 +36,9 @@ if (isset($_GET['postID'])):
 else:
 include_once '../app/controleurs/postsControleur.php';
 \Controleurs\Posts\indexAction($connexion);
+
+
+
 
 
 endif;
