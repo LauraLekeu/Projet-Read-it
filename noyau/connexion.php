@@ -1,0 +1,4 @@
+<?php
+/*
+    .noyau/connexion.php
+*/

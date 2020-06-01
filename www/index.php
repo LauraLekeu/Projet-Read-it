@@ -1,0 +1,4 @@
+<?php
+/*
+    .www/index.php
+*/
