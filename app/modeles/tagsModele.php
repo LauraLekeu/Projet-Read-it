@@ -6,7 +6,7 @@ namespace Modeles\Tags;
 
 
 
- function findAll(\PDO $connexion, int $id) {
+ function findOneById(\PDO $connexion, int $id) {
    $sql = "SELECT *
            FROM tags t
            JOIN posts_has_tags pht ON pht.tag_id = t.id
