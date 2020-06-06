@@ -26,3 +26,14 @@ function findOneById(\PDO $connexion, int $id) {
   $rs->execute();
   return $rs->fetch(\PDO::FETCH_ASSOC);
 }
+
+
+function findLastest(\PDO $connexion) {
+  $sql = "SELECT *  
+          FROM authors a
+          JOIN posts p ON p.author_id = a.id
+          ORDER BY created_at DESC
+          LIMIT 3;";
+  $rs = $connexion->query($sql);
+  return $rs->fetchAll(\PDO::FETCH_ASSOC);
+}

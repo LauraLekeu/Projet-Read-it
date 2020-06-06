@@ -31,3 +31,13 @@ function showAction(\PDO $connexion, int $id) {
     include '../app/vues/posts/show.php';
   $content = ob_get_clean();
 }
+
+
+//
+function lastestIndex(\PDO $connexion) {
+  // Je demande les derniers posts
+  include_once '../app/modeles/postsModele.php';
+  $posts = Posts\findLastest($connexion);
+  // Je charge la vue index
+  include '../app/vues/posts/lastestIndex.php';
+}

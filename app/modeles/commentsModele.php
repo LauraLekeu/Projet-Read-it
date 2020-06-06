@@ -10,7 +10,7 @@ namespace Modeles\Comments;
 
 
  function findAll(\PDO $connexion, int $id) {
-   $sql = "SELECT *, COUNT(c.id)  AS nombreCommentaires
+   $sql = "SELECT * , COUNT(c.id) AS nombreCommentaires
            FROM comments c
            JOIN posts p ON c.post_id = p.id
            WHERE p.id = :id;
