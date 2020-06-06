@@ -16,3 +16,13 @@ use Modeles\Tags;
    // Je charge la vue show dans $content;
    include '../app/vues/tags/show.php';
  }
+
+
+ function indexAction(\PDO $connexion) {
+   // Je demande les tags
+   include_once '../app/modeles/tagsModele.php';
+   $tags = Tags\findAll($connexion);
+
+   // Je charge la vue show dans $content;
+   include '../app/vues/tags/index.php';
+ }

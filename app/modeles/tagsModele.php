@@ -16,3 +16,11 @@ namespace Modeles\Tags;
    $rs->execute();
    return $rs->fetchAll(\PDO::FETCH_ASSOC);
  }
+
+
+ function findAll(\PDO $connexion) {
+   $sql = "SELECT *
+           FROM tags";
+   $rs = $connexion->query($sql);
+   return $rs->fetchAll(\PDO::FETCH_ASSOC);
+ }
