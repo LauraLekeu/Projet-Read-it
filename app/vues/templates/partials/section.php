@@ -12,8 +12,8 @@
          </div>
        </div>
 
-       <!-- .col-md-8 -->
-       <div class="col-lg-4 sidebar pl-lg-5 ftco-animate">
+
+       <!-- .col-md-8 -->  <div class="col-lg-4 sidebar pl-lg-5 ftco-animate">
          <div class="sidebar-box">
            <form action="#" class="search-form">
              <div class="form-group">
@@ -22,16 +22,18 @@
              </div>
            </form>
          </div>
+
+
+
          <div class="sidebar-box ftco-animate">
-           <div class="categories">
-             <h3>Categories</h3>
-             <li><a href="#">Illustration <span class="ion-ios-arrow-forward"></span></a></li>
-             <li><a href="#">Branding <span class="ion-ios-arrow-forward"></span></a></li>
-             <li><a href="#">Application <span class="ion-ios-arrow-forward"></span></a></li>
-             <li><a href="#">Design <span class="ion-ios-arrow-forward"></span></a></li>
-             <li><a href="#">Marketing <span class="ion-ios-arrow-forward"></span></a></li>
-           </div>
+           <?php
+              include_once '../app/controleurs/categoriesControleur.php';
+              \Controleurs\Categories\indexAction($connexion);
+            ?>
          </div>
+
+
+
 
          <div class="sidebar-box ftco-animate">
            <h3>Recent Blog</h3>
@@ -84,7 +86,10 @@
            </div>
          </div>
 
-       </div>
+       </div> <!-- / .col-md-8 -->
+
+
+
 
      </div>
    </div>
