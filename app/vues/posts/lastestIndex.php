@@ -13,7 +13,7 @@
       <div class="meta">
         <div><a href="#"><span class="icon-calendar"></span><?php echo date_format(date_create($post['created_at']), "M. j, Y"); ?></a></div>
         <div><a href="#"><span class="icon-person"></span><?php echo $post['firstname']; ?></a></div>
-        <!-- <div><a href="#"><span class="icon-chat"></span><?php echo $post['nombreCommentaires']; ?></a></div> -->
+        <!-- <div><a href="#"><span class="icon-chat"></span><?php echo $post['nombreCommentaires']; ?></a></div>  -->
       </div>
     </div>
   </div>

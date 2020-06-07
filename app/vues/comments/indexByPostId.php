@@ -1,12 +1,13 @@
 <?php
 /*
-    ./app/vues/comments/show.php
+    ./app/vues/comments/indexByPostId.php
 */
 ?>
 <?php
-  if (isset($comments['nombreCommentaires'])):
+   if ($nbComments['nbComments'] > 0):
 ?>
-    <h3 class="mb-5"><?php echo $comments['nombreCommentaires'] . " Commentaire"; ?></h3>
+
+    <h3 class="mb-5"><?php echo $nbComments['nbComments'] . " comments "; ?></h3>
     <ul class="comment-list">
       <?php foreach ($comments as $comment): ?>
         <li class="comment">
@@ -19,12 +20,14 @@
       <?php endforeach; ?>
     </ul>
 
-<?php  else: ?>
-    <h3 class="mb-5">0 commentaire</h3>
+    <?php
+  else:
+    ?>
+      <h3 class="mb-5">0 comment</h3>
 
-<?php  endif; ?>
-
-
+      <?php
+    endif;
+      ?>
 
 <!-- END comment-list -->
 

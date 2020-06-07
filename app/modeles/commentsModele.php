@@ -8,18 +8,26 @@
 namespace Modeles\Comments;
 
 
-
-
- function findAll(\PDO $connexion, int $id) {
-   $sql = "SELECT * , COUNT(c.id) AS nombreCommentaires
-           FROM comments c
-           JOIN posts p ON c.post_id = p.id
-           WHERE p.id = :id;
-           GROUP BY c.id;";
+ function findOneById(\PDO $connexion, int $id) {
+   $sql = "SELECT *
+           FROM posts p
+           JOIN comments c ON c.post_id = p.id
+           WHERE p.id = :id;";
    $rs = $connexion->prepare($sql);
    $rs->bindValue(':id', $id, \PDO::PARAM_INT);
    $rs->execute();
    return $rs->fetchAll(\PDO::FETCH_ASSOC);
+ }
+
+ function findNbComments(\PDO $connexion, int $id) {
+   $sql = "SELECT COUNT(id) AS nbComments, post_id
+           FROM comments
+           WHERE post_id = :id;
+           ";
+   $rs = $connexion->prepare($sql);
+   $rs->bindValue(':id', $id, \PDO::PARAM_INT);
+   $rs->execute();
+   return $rs->fetch(\PDO::FETCH_ASSOC);
  }
 
 

@@ -5,6 +5,7 @@
 
 namespace Controleurs\Posts;
 use Modeles\Posts;
+use Modeles\Comments;
 
 
 //
@@ -40,6 +41,7 @@ function lastestIndex(\PDO $connexion) {
   // Je demande les derniers posts
   include_once '../app/modeles/postsModele.php';
   $posts = Posts\findLastest($connexion);
+  
   // Je charge la vue index
   include '../app/vues/posts/lastestIndex.php';
 }

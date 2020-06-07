@@ -29,6 +29,6 @@
 <div class="pt-5 mt-5">
   <?php
     include_once '../app/controleurs/commentsControleur.php';
-    \Controleurs\Comments\showAction($connexion, $id);
+    \Controleurs\Comments\indexByPostId($connexion, $id);
    ?>
 </div>
