@@ -13,7 +13,8 @@ function indexAction(\PDO $connexion) {
   include_once '../app/modeles/postsModele.php';
   $posts = Posts\findAll($connexion);
   // Je charger la vue dans $content
-  GLOBAL $content;
+  GLOBAL $content, $title;
+  $title = "Recent posts";
   ob_start();
     include '../app/vues/posts/index.php';
   $content = ob_get_clean();
@@ -26,7 +27,8 @@ function showAction(\PDO $connexion, int $id) {
   include_once '../app/modeles/postsModele.php';
   $post = Posts\findOneById($connexion, $id);
   // Je charge la vue dans $content
-  GLOBAL $content;
+  GLOBAL $content, $title;
+  $title = $post['title'];
   ob_start();
     include '../app/vues/posts/show.php';
   $content = ob_get_clean();
