@@ -4,14 +4,18 @@
 */
 //
 
-//   ETAPE 1
-//     > Image + title + content
-//   ETAPE 2 (voir astuces)
-//     > Liste des tags du post
-//   ETAPE 3 (voir astuces)
-//     > Affichage de l'image, du nom et de la bio de l'auteur
-//   ETAPE 4 (voir astuces)
-//     > Liste des comments + formulaire en POST (vers ?comments=add)
+//
+// ROUTE DU CONTACT:
+// PATTERN: /?contact
+// CTRL: Aucun
+// ACTION: Aucune
+//   > On charge le partial _contact.php
+if (isset($_GET['contact'])):
+  GLOBAL $content, $title;
+  $title = "Contact";
+  ob_start();
+    include '../app/vues/templates/partials/contact.php';
+  $content = ob_get_clean();
 
 
 
@@ -20,7 +24,7 @@
 // PATTERN: /?postID=x
 // CTRL: postsControleur
 // ACTION: showAction
-if (isset($_GET['postID'])):
+elseif (isset($_GET['postID'])):
   include_once '../app/controleurs/postsControleur.php';
   \Controleurs\Posts\showAction($connexion, $_GET['postID']);
 
